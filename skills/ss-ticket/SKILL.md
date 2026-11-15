@@ -63,7 +63,7 @@ Iterate until the user approves.
 - Path: `<root>/docs/plan/tickets/<feature-slug>/<NN>-<ticket-slug>.md`, numbered from `01` in dependency order (blockers first). Create the directory if missing.
   - `<feature-slug>`: same slug as the spec file `docs/spec/<feature-slug>.md` when one exists; otherwise a kebab-case feature name.
   - `<NN>`: two digits, zero-padded.
-- Language: the project's document language (translate headings; keep identifiers as-is).
+- Language: the project's document language for the body text; headings stay as in the template; keep identifiers as-is.
 - Use the template in [TICKET-FORMAT.md](./TICKET-FORMAT.md) exactly: the same headings in the same order, nothing added or renamed, and "None decided." for an empty section. One ticket per file, never a combined file.
 - A Human ticket gets `Status: ready-for-human`; every other ticket gets `Status: ready`. The person sets `done` by hand.
 - Do NOT close or modify any spec or backlog file.
