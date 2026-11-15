@@ -53,6 +53,7 @@ Ask:
 - Does the granularity feel right? (too coarse / too fine)
 - Are the blocking edges correct — does each ticket only depend on tickets that genuinely gate it?
 - Should any tickets be merged or split further?
+- Which tickets does a person work instead of an agent? Those become **Human tickets**.
 
 Iterate until the user approves.
 
@@ -64,13 +65,14 @@ Iterate until the user approves.
   - `<NN>`: two digits, zero-padded.
 - Language: the project's document language (translate headings; keep identifiers as-is).
 - Use the ticket template below. One ticket per file, never a combined file.
+- A Human ticket gets `Status: ready-for-human`; every other ticket gets `Status: ready`. The person sets `done` by hand.
 - Do NOT close or modify any spec or backlog file.
 
 <ticket-template>
 # <NN> — <Ticket title>
 
 - **Date:** YYYY-MM-DD
-- **Status:** ready        ← ready · in-progress · done · blocked — <reason>
+- **Status:** ready        ← ready · ready-for-human · in-progress · done · blocked — <reason>
 - **Blocked by:** <NN titles>, or "None — can start immediately"
 - **Source:** <spec / backlog path, if any>
 

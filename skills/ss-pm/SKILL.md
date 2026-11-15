@@ -15,7 +15,7 @@ You are the PM. You choose the tickets and dispatch the work. You never edit cod
 - none → every `ready` ticket under `docs/plan/tickets/`.
 - A leading `@` on any path (an editor file mention) is ignored. Ticket files and folders can be mixed in one call.
 
-Eligible = status `ready` and every "Blocked by" ticket has status `done`. Order: feature folder, then lowest ticket number first. A ticket that is `ready` but still blocked counts toward the scope: an earlier commit in the run may unblock it.
+Eligible = status `ready` and every "Blocked by" ticket has status `done`. A Human ticket (`Status: ready-for-human`) is never eligible and never dispatched, even when named explicitly. Never change its status. Order: feature folder, then lowest ticket number first. A ticket that is `ready` but still blocked counts toward the scope: an earlier commit in the run may unblock it.
 
 ### Count: how many tickets
 
@@ -62,3 +62,5 @@ A halt stops the whole run. Do not start the next ticket. Leave the tree as is f
 ## Final report
 
 One line per ticket, then the stop reason (`max reached` | `no eligible tickets` | `halt: <ticket> — <blocker>`), and the next eligible ticket if any.
+
+Then one line per Human ticket in the run's feature folders (all of `docs/plan/tickets/` with no refs) whose "Blocked by" tickets are all `done`: `<NN> — <title>: ready-for-human, all blockers done`. Work this out from the blockers at report time.

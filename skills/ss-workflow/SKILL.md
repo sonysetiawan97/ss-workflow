@@ -68,7 +68,7 @@ ss-grilling  →  ss-prd  →  ss-spec  →  ss-ticket  →  ss-implement  →  
 
 **What it does:** breaks the spec into vertical-slice tickets under `docs/plan/tickets/<feature-slug>/`, numbered in dependency order. Wide refactors are sequenced expand → migrate → contract, never forced into one slice.
 
-**Leaves behind:** one file per ticket, each with a `Status: ready` line and a "Blocked by" list.
+**Leaves behind:** one file per ticket, each with a `Status: ready` line and a "Blocked by" list. In the quiz step the user names the tickets a person works. Those are **Human tickets**, written with `Status: ready-for-human`. A Human ticket is workable once all its blockers are `done`; nothing rewrites its status. The person sets `done` by hand.
 
 **Done when:** the user approves the breakdown; every ticket is one fresh context window of work with a demoable end state.
 
@@ -106,9 +106,9 @@ ss-grilling  →  ss-prd  →  ss-spec  →  ss-ticket  →  ss-implement  →  
 1. `ss-implementator` runs steps 1–4 of `ss-implement` and leaves the tree uncommitted.
 2. `ss-review-commit` runs `ss-code-review`. If the review is clean, it sets the unit `done` and runs `ss-commit`.
 
-A Violation goes back to the implementator once, with `fix=`. The PM halts the whole run on the first failure. The workers cannot ask the user, so a ticket that is missing its seams halts the run instead of guessing. On a runtime without subagents (pi), each worker runs as a fresh headless process (`pi -p --no-session`).
+It never dispatches a Human ticket (`ready-for-human`). A Violation goes back to the implementator once, with `fix=`. The PM halts the whole run on the first failure. The workers cannot ask the user, so a ticket that is missing its seams halts the run instead of guessing. On a runtime without subagents (pi), each worker runs as a fresh headless process (`pi -p --no-session`).
 
-**Leaves behind:** one local commit per ticket, never pushed. The run ends with a report of one line per ticket and the stop reason.
+**Leaves behind:** one local commit per ticket, never pushed. The run ends with a report of one line per ticket and the stop reason, plus `<NN> — <title>: ready-for-human, all blockers done` for each Human ticket whose blockers are all `done`.
 
 **Done when:** `max` is reached, no eligible ticket remains, or a halt is reported with its exact blocker.
 
