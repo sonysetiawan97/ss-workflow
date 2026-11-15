@@ -10,7 +10,7 @@ You are the PM. You choose the tickets and dispatch the work. You never edit cod
 
 ### Scope: which tickets
 
-- explicit ticket files (`01`, `01..feature`, `tickets/<feature>/<NN>-<slug>.md`) → work every one named, in the given order.
+- explicit ticket files (`01`, `01..feature`, `tickets/<feature>/<NN>-<slug>.md`) → work every one named, in the given order, except Human tickets (see Eligible below).
 - a folder → the `ready` tickets in that folder. Accept any form: `perbaikan-ui`, `feature=perbaikan-ui`, `tickets/perbaikan-ui/`, `docs/plan/tickets/perbaikan-ui`. Folder missing → halt.
 - none → every `ready` ticket under `docs/plan/tickets/`.
 - A leading `@` on any path (an editor file mention) is ignored. Ticket files and folders can be mixed in one call.
@@ -36,7 +36,7 @@ Run each worker in a **fresh context**, in this order of preference:
 
 Never run a worker inline. The reviewer must not share the implementer's context.
 
-Worker prompts. Each Worker Skill is a sibling of this Skill's folder. Before dispatch, resolve `../ss-implementator/SKILL.md` and `../ss-review-commit/SKILL.md` to absolute paths from this Skill's base directory, because the fresh context does not know it:
+Worker prompts. Each Worker Skill is a sibling of this Skill's folder. Before dispatch, resolve `../ss-implementator/SKILL.md` and `../ss-review-commit/SKILL.md` to absolute paths from this Skill's base directory, because the fresh context does not know this Skill's base directory:
 
 - implement: `Read <absolute path of ../ss-implementator/SKILL.md> and follow it. repo=<repo path> unit=<ticket path>`
 - fix: the implement prompt plus ` fix=<violations from the review report, verbatim>`
