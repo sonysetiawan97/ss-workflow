@@ -3,7 +3,7 @@ name: ss-code-review
 description: Review a diff for design quality — Clean Code (Robert C. Martin) and strategic DDD — against the project's own sources of truth. Read-only; reports Violations and Suggestions. Use when the user says "review the code", "review this diff", or as the closing step of ss-implement.
 ---
 
-Review **design**, not compliance. Compliance (lint, API contract, migrations, docs, privilege catalog) belongs to the repo's own tooling and governance reviewer (e.g. `sagara-review`, `sagara-code-reviewer`); skip anything they or a linter already enforce. This review asks: is the code honest, small, and shaped like the domain?
+Review **design**, not compliance. Compliance (lint, API contract, migrations, docs, privilege catalog) belongs to the repo's own tooling and governance reviewer; skip anything they or a linter already enforce. This review asks: is the code honest, small, and shaped like the domain?
 
 Read-only: write the report, change nothing.
 

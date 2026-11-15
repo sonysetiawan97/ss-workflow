@@ -22,17 +22,17 @@ Load and hold **all three** for the whole session:
 - `review/<slug>.md` or bare slug → `docs/plan/backlog-review/<slug>.md`
 - none → list every unit with status `done` (or state `done`) across `docs/plan/tickets/` **and** `docs/plan/backlog-review/`; ask which one. If exactly one, use it and say so.
 
-The unit must carry a `Selesai:` line naming the repo and sha (or `uncommitted`). No `Selesai` line → halt: unit is not done; run `ss-implement` first.
+The unit must carry a `Done:` line naming the repo and sha (or `uncommitted`). No `Done` line → halt: unit is not done; run `ss-implement` first.
 
 ## Steps
 
 1. **Read the unit.** Load the ticket / request file and everything it references (agent brief, linked spec, ADRs).
    Done when every referenced file is read.
 
-2. **Locate the code.** The `Selesai` line names `<repo>@<sha>`.
+2. **Locate the code.** The `Done` line names `<repo>@<sha>`.
    - Repo path is relative to the framework root (e.g. `api-contract`). cd into it.
    - Check out the named state: if the repo's `dev` (or the branch the ticket names) already contains the sha → work there. Otherwise `git checkout <sha>` (detached is fine; never push, never branch from the ticket itself).
-   - `Selesai: uncommitted` → verify the working tree still holds the change (`git status --short` non-empty, diff matches the ticket's scope). Missing → halt: the claimed work is not on disk.
+   - `Done: uncommitted` → verify the working tree still holds the change (`git status --short` non-empty, diff matches the ticket's scope). Missing → halt: the claimed work is not on disk.
    Done when the exact claimed state is checked out and the commit/diff exists.
 
 3. **Re-check acceptance criteria one by one, in the repo's current state.** For each checkbox in the ticket's "Acceptance criteria" (or the request's acceptance criteria):
@@ -49,19 +49,19 @@ The unit must carry a `Selesai:` line naming the repo and sha (or `uncommitted`)
    Done when every named test has a fresh pass/fail and any red has a drift explanation.
 
 5. **Cross-check the claims.** Compare the ticket's recorded results against fresh ones:
-   - Recorded "120 lulus / 5 gagal" vs. the fresh run's numbers → report the delta with the cause (fix since the ticket? environmental difference? test drift?).
-   - `Selesai` sha: is it actually on the claimed branch's history? `git branch --contains <sha>`.
+   - Recorded "120 passed / 5 failed" vs. the fresh run's numbers → report the delta with the cause (fix since the ticket? environmental difference? test drift?).
+   - `Done` sha: is it actually on the claimed branch's history? `git branch --contains <sha>`.
    - Tag claims: `info.version` in the spec equals the tag name.
    Done when every claim is confirmed, corrected, or flagged as stale.
 
 6. **Verdict and status.** Write one line per criterion, then the unit's overall verdict:
    - **VERIFIED** — every criterion pass (or `unverified` with a valid reason), tests green or red-for-known-documented-reason, claims hold.
    - **FAILED: <list>** — any criterion fails, a test goes red without the ticket documenting the red, or a claim no longer holds. Do not fix code. Report exactly what is broken and route the user to `ss-diagnose` (broken) or a new ticket (scope that was never done).
-   - **STALE** — verdicts hold but the `Selesai` sha / tag / version claims moved (later commits exist on the branch); report which.
+   - **STALE** — verdicts hold but the `Done` sha / tag / version claims moved (later commits exist on the branch); report which.
 
    Then, if — and only if — the verdict is **VERIFIED**: update the unit's status line to add the verification note:
    ```
-   - **Terverifikasi:** YYYY-MM-DD · <repo>@<sha> · seluruh AC <pass|unverified-sebut-siapa>
+   - **Verified:** YYYY-MM-DD · <repo>@<sha> · all AC <pass|unverified-name-who>
    ```
    For **FAILED** / **STALE**, change nothing on disk — the tree stays in place for the next stage.
 
@@ -71,13 +71,13 @@ The unit must carry a `Selesai:` line naming the repo and sha (or `uncommitted`)
 
 A halt stops the work, leaving everything in place for inspection. Halts:
 
-- no `Selesai` line on the unit (not done; `ss-implement` first);
+- no `Done` line on the unit (not done; `ss-implement` first);
 - the claimed sha does not exist in the named repo;
 - the claimed working-tree change is gone (`git status` clean and no matching commit);
 - the unit contradicts the repo's sources of truth (`CLAUDE.md`, ADRs) — report the contradiction rather than choosing a side.
 
 ## Out of scope
 
-- No code edits. Verification is read-only on the repos it checks; the only write is the `Terverifikasi:` line in the unit's own file.
+- No code edits. Verification is read-only on the repos it checks; the only write is the `Verified:` line in the unit's own file.
 - No fixing. Red stays red and gets reported. `ss-diagnose` owns the fix.
 - No re-implementing. The unit's work was done by `ss-implement`; this only re-proves it.

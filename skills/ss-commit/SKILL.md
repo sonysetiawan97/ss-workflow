@@ -4,7 +4,7 @@ description: Commit the working tree locally as Conventional Commits 1.0.0 — r
 disable-model-invocation: true
 ---
 
-Turn the working tree into one or more **atomic** commits: each commit is one logical change that builds and passes on its own. Local only — pushing, rebasing, and merging belong to the user or to a shipping skill such as `sagara-ship`.
+Turn the working tree into one or more **atomic** commits: each commit is one logical change that builds and passes on its own. Local only — pushing, rebasing, and merging belong to the user or to a shipping skill.
 
 ## Arguments
 

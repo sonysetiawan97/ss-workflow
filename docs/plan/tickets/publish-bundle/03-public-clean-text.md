@@ -1,7 +1,8 @@
 # 03 — Public-clean text
 
 - **Date:** 2026-11-15
-- **Status:** ready
+- **Status:** done
+- **Selesai:** 2026-11-15 · ss-workflow@uncommitted
 - **Blocked by:** 01 — Import the Bundle with Published names
 - **Source:** docs/spec/publish-bundle.md
 

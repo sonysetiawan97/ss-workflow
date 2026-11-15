@@ -120,7 +120,7 @@ A starting situation that merges onto the main flow, not a step in it.
 
 - **Something's broken and hard to pin down** → `ss-diagnose`. Builds a tight red-capable feedback loop, minimises the repro, tests ranked hypotheses, fixes with a regression test at a correct seam, then hands off to `ss-commit`. A fix that grows past one small change becomes a request for `ss-triage` instead.
 
-- **A unit says `done` but you want proof** → `ss-verify`. Re-runs every acceptance criterion against the claimed repo state (checkout the `Selesai` sha, re-run the unit's tests, re-check tags/changelogs/claims), returns VERIFIED / FAILED / STALE, and only on VERIFIED stamps a `Terverifikasi:` line on the unit. Read-only on code; never fixes — FAILED routes to `ss-diagnose`.
+- **A unit says `done` but you want proof** → `ss-verify`. Re-runs every acceptance criterion against the claimed repo state (checkout the `Done` sha, re-run the unit's tests, re-check tags/changelogs/claims), returns VERIFIED / FAILED / STALE, and only on VERIFIED stamps a `Verified:` line on the unit. Read-only on code; never fixes — FAILED routes to `ss-diagnose`.
 
 ## Codebase health
 

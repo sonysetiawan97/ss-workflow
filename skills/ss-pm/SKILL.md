@@ -22,8 +22,8 @@ Eligible = status `ready` and every "Blocked by" ticket has status `done`. Order
 The count applies to folders and to no-refs. Explicit ticket files are always all worked, with no question, unless `max=<N>` is given.
 
 - `max=<N>` → stop after N committed tickets. No confirmation.
-- `max` with no value → all tickets in scope. Before dispatching, confirm: "Akan mengerjakan <count> tiket: <list>. Lanjut?" Proceed only on yes.
-- no `max` → before dispatching, ask: "Ada <count> tiket ready: <list>. Kerjakan berapa? (a) 3, (b) semua, (c) jumlah lain." Use the answer as `N`.
+- `max` with no value → all tickets in scope. Before dispatching, confirm: "About to work <count> tickets: <list>. Continue?" Proceed only on yes.
+- no `max` → before dispatching, ask: "<count> tickets ready: <list>. How many? (a) 3, (b) all, (c) another number." Use the answer as `N`.
 
 There is no ceiling on `N`. Ask in the main session, before step 3. Never ask again after the first dispatch.
 

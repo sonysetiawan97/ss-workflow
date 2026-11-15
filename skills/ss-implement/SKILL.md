@@ -57,7 +57,7 @@ If the reference is a `ready-for-agent` request file, its **agent brief** is the
 
 6. **Hand off.** Set the ticket's status to `done`, or the request file's state line to `done`, and add a completion note:
    ```
-   - **Selesai:** YYYY-MM-DD · <repo>@<working-tree-sha or "uncommitted">
+   - **Done:** YYYY-MM-DD · <repo>@<working-tree-sha or "uncommitted">
    ```
    Report: the unit's path, its status, any `unverified:` checks, and the Suggestion count.
    Tell the user: "Run `ss-commit` to commit, then `ss-implement` on the next ready item to continue."

@@ -19,7 +19,7 @@ Read the siblings `../ss-code-review/SKILL.md` and `../ss-commit/SKILL.md` by pa
    - Any **Violation** → stop. Commit nothing. Report `VIOLATIONS` with each one verbatim.
 2. **Mark done.** Report `CLEAN` or `HAS SUGGESTIONS` → in the ticket file set the status to `done`, record each Suggestion in its status notes, and add:
    ```
-   - **Selesai:** YYYY-MM-DD · <repo>@uncommitted
+   - **Done:** YYYY-MM-DD · <repo>@uncommitted
    ```
    Keep any `unverified:` lines the implementer wrote.
 3. **Commit.** Run `ss-commit` with `unit=<ticket path>`. Local commit only. Never push. The ticket file goes in the same commit as the code.
