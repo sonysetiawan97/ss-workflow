@@ -14,7 +14,7 @@ Implement **one** ticket and stop with an uncommitted tree. Review and commit be
 
 ## Procedure
 
-Read `~/.agents/skills/ss-implement/SKILL.md` by path (it may be hidden from auto-invocation).
+Read the sibling `../ss-implement/SKILL.md` by path, resolved to an absolute path from this Skill's base directory (it may be hidden from auto-invocation).
 
 - **Normal mode:** run its steps 1–4 on `unit` exactly as written. Every preflight check and halt rule applies.
 - **Fix mode:** run step 1, skip step 2 (the tree is dirty with your own work and the status is `in-progress`), fix each Violation within the ticket's scope, then run step 4.

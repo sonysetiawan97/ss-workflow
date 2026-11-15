@@ -31,16 +31,16 @@ There is no ceiling on `N`. Ask in the main session, before step 3. Never ask ag
 
 Run each worker in a **fresh context**, in this order of preference:
 
-1. a subagent, if your runtime has one (Claude Code `Agent`, opencode `task`): agent `ss-implementator` / `ss-review-commit`;
+1. the Host's generic subagent, if it has one (Claude Code `general-purpose`, opencode `task`);
 2. otherwise a fresh headless process of your own CLI (pi: `pi -p --no-session "<prompt>"`; opencode: `opencode run "<prompt>"`; Claude Code: `claude -p "<prompt>"`).
 
 Never run a worker inline. The reviewer must not share the implementer's context.
 
-Worker prompts:
+Worker prompts. Each Worker Skill is a sibling of this Skill's folder. Before dispatch, resolve `../ss-implementator/SKILL.md` and `../ss-review-commit/SKILL.md` to absolute paths from this Skill's base directory, because the fresh context does not know it:
 
-- implement: `Read ~/.agents/skills/ss-implementator/SKILL.md and follow it. repo=<repo path> unit=<ticket path>`
+- implement: `Read <absolute path of ../ss-implementator/SKILL.md> and follow it. repo=<repo path> unit=<ticket path>`
 - fix: the implement prompt plus ` fix=<violations from the review report, verbatim>`
-- review: `Read ~/.agents/skills/ss-review-commit/SKILL.md and follow it. repo=<repo path> unit=<ticket path>`
+- review: `Read <absolute path of ../ss-review-commit/SKILL.md> and follow it. repo=<repo path> unit=<ticket path>`
 
 ## Procedure
 

@@ -50,7 +50,7 @@ If the reference is a `ready-for-agent` request file, its **agent brief** is the
    - Red → fix within the unit's scope and re-run. Still red after an honest attempt, or green only by widening scope → halt.
    - A check that cannot be run here (missing service, manual device check) → record it as `unverified: <check>` in the unit's status line rather than claiming it.
 
-5. **Review.** Dispatch a `general-purpose` subagent: "Read `~/.agents/skills/ss-code-review/SKILL.md` and follow it on the uncommitted changes in `<repo>`, `unit=<path>`. Return the report." You wrote the code, so the review runs in that fresh context, never inline.
+5. **Review.** Resolve the sibling path `../ss-code-review/SKILL.md` to an absolute path from this Skill's base directory, then dispatch a `general-purpose` subagent: "Read `<absolute path>` and follow it on the uncommitted changes in `<repo>`, `unit=<path>`. Return the report." You wrote the code, so the review runs in that fresh context, never inline.
    - **Violation** → fix within the unit's scope, re-run step 4, review again. Still present after the second review, or fixable only by going outside the unit → halt.
    - **Suggestion** → record each in the unit's status notes. Apply none. Scope stays the unit's.
    Done when the report is `CLEAN` or `HAS SUGGESTIONS`.

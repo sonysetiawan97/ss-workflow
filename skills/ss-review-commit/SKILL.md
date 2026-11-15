@@ -13,7 +13,7 @@ Review one ticket's uncommitted work in a fresh context, then commit it if the r
 
 ## Procedure
 
-Read `~/.agents/skills/ss-code-review/SKILL.md` and `~/.agents/skills/ss-commit/SKILL.md` by path.
+Read the siblings `../ss-code-review/SKILL.md` and `../ss-commit/SKILL.md` by path, resolved to absolute paths from this Skill's base directory.
 
 1. **Review.** Run `ss-code-review` on the uncommitted changes with `unit=<ticket path>`.
    - Any **Violation** → stop. Commit nothing. Report `VIOLATIONS` with each one verbatim.
