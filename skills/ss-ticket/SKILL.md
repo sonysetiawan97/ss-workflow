@@ -65,7 +65,7 @@ Iterate until the user approves.
   - `<NN>`: two digits, zero-padded.
 - Language: the project's document language for the body text; headings stay as in the template; keep identifiers as-is.
 - Use the template in [TICKET-FORMAT.md](./TICKET-FORMAT.md) exactly: the same headings in the same order, nothing added or renamed, and "None decided." for an empty section. One ticket per file, never a combined file.
-- A Human ticket gets `Status: ready-for-human`; every other ticket gets `Status: ready`. The person sets `done` by hand.
+- Set each ticket's status per the Status section of [TICKET-FORMAT.md](./TICKET-FORMAT.md).
 - Do NOT close or modify any spec or backlog file.
 
 ## It's working if

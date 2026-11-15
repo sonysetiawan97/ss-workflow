@@ -36,5 +36,5 @@ A ticket is workable when its status is `ready` or `ready-for-human` and every b
 
 - Use the template exactly: the same headings in the same order, nothing added or renamed.
 - A section with nothing decided holds only "None decided."
-- The only lines added later go under the header block: `Done:` (written by `ss-implement` or `ss-review-commit`) and `Verified:` (written by `ss-verify`).
+- The only lines added later go at the end of the header block, after `Blocked by`: `Done:` (written by `ss-implement` or `ss-review-commit`) and `Verified:` (written by `ss-verify`).
 - No specific file paths or code snippets — they go stale fast. Exception: a prototype snippet that encodes a decision more precisely than prose (state machine, reducer, schema, type shape), noted as coming from a prototype.
