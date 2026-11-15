@@ -64,27 +64,9 @@ Iterate until the user approves.
   - `<feature-slug>`: same slug as the spec file `docs/spec/<feature-slug>.md` when one exists; otherwise a kebab-case feature name.
   - `<NN>`: two digits, zero-padded.
 - Language: the project's document language (translate headings; keep identifiers as-is).
-- Use the ticket template below. One ticket per file, never a combined file.
+- Use the template in [TICKET-FORMAT.md](./TICKET-FORMAT.md) exactly: the same headings in the same order, nothing added or renamed, and "None decided." for an empty section. One ticket per file, never a combined file.
 - A Human ticket gets `Status: ready-for-human`; every other ticket gets `Status: ready`. The person sets `done` by hand.
 - Do NOT close or modify any spec or backlog file.
-
-<ticket-template>
-# <NN> — <Ticket title>
-
-- **Date:** YYYY-MM-DD
-- **Status:** ready        ← ready · ready-for-human · in-progress · done · blocked — <reason>
-- **Blocked by:** <NN titles>, or "None — can start immediately"
-- **Source:** <spec / backlog path, if any>
-
-## What to build
-The end-to-end behaviour this ticket makes work, from the user's perspective — not a layer-by-layer implementation list.
-
-## Acceptance criteria
-- [ ] Criterion 1
-- [ ] Criterion 2
-</ticket-template>
-
-In the ticket file, avoid specific file paths or code snippets — they go stale fast. Exception: if a prototype produced a snippet that encodes a decision more precisely than prose (state machine, reducer, schema, type shape), inline it and note briefly that it came from a prototype; keep only the decision-rich parts.
 
 ## It's working if
 

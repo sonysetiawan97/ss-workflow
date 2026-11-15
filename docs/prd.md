@@ -1,5 +1,8 @@
 # PRD: Publish the ss workflow Bundle
 
+- **Date:** 2026-11-15
+- **Source:** the grilling session of 2026-11-15, `GLOSSARY.md`, `docs/adr/0001-workers-without-agent-files.md`
+
 ## Problem
 
 The ss workflow skills exist only on one machine, as local `ss-*-001` folders under `~/.agents/skills/`. They are not in git, cannot be installed online, and carry local-only details: a Dev suffix, hardcoded `~/.agents/skills/` paths, Agent files under `~/.claude/agents/`, office (Sagara) skill names, and Indonesian strings. Nobody else, and no other machine, can install the workflow.
@@ -73,6 +76,8 @@ The ss workflow skills exist only on one machine, as local `ss-*-001` folders un
 ## Changelog
 
 <!-- newest first -->
+
+- **2026-11-15**: Rewritten to `ss-prd/PRD-FORMAT.md`: the `Date` and `Source` header block is new. No decision changed.
 
 - **2026-11-15**: Added Human tickets (`ready-for-human`, skipped by `ss-pm`, listed in its report once unblocked) and strict, shared Format files for the PRD, spec and ticket templates. Requirements 13–18 and acceptance criteria 11–13 are new. Publishing becomes the last ticket, worked by a person. Decided after the ticket breakdown.
 

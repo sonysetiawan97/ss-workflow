@@ -1,10 +1,10 @@
 # 04 — Release files
 
 - **Date:** 2026-11-15
-- **Status:** done
-- **Selesai:** 2026-11-15 · ss-workflow@uncommitted
-- **Blocked by:** 01 — Import the Bundle with Published names
 - **Source:** docs/spec/publish-bundle.md; docs/prd.md
+- **Status:** done
+- **Blocked by:** 01 — Import the Bundle with Published names
+- **Done:** 2026-11-15 · ss-workflow@uncommitted
 
 ## What to build
 

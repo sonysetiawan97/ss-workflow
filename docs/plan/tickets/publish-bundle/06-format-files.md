@@ -1,9 +1,10 @@
 # 06 — Format files for PRD, spec and ticket
 
 - **Date:** 2026-11-15
-- **Status:** ready
-- **Blocked by:** 05 — Human tickets
 - **Source:** docs/spec/publish-bundle.md; docs/prd.md
+- **Status:** done · suggestion: [clean:duplication] skills/ss-ticket/SKILL.md — the `ready-for-human` / `ready` status rule restates the Status section of TICKET-FORMAT.md; point at the Format file instead · suggestion: [clean:names] skills/ss-ticket/TICKET-FORMAT.md, Rules — "the only lines added later go under the header block" reads as below it, while `Done:` sits inside it after `Blocked by`; say "at the end of the header block"
+- **Blocked by:** 05 — Human tickets
+- **Done:** 2026-11-15 · /Volumes/workspace/ss/skills/ss-workflow@uncommitted
 
 ## What to build
 

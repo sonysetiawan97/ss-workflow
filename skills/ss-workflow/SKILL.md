@@ -46,7 +46,7 @@ ss-grilling  →  ss-prd  →  ss-spec  →  ss-ticket  →  ss-implement  →  
 
 **When:** the grilling session just settled the decisions and you need a durable, dated record of them in the repo.
 
-**What it does:** synthesizes the grilling session's settled decisions into `docs/prd.md` — problem, goals/non-goals, users/actors, requirements, acceptance criteria, constraints/assumptions — and appends one line to `## Changelog` naming what changed and why. Updates in place when the PRD already covers the same feature.
+**What it does:** synthesizes the grilling session's settled decisions into `docs/prd.md`, using the template in `ss-prd/PRD-FORMAT.md` exactly, and appends one line to `## Changelog` naming what changed and why. Updates in place when the PRD already covers the same feature.
 
 **Leaves behind:** `docs/prd.md` (current, with changelog history).
 
@@ -56,7 +56,7 @@ ss-grilling  →  ss-prd  →  ss-spec  →  ss-ticket  →  ss-implement  →  
 
 **When:** you're ready to write the test-seams and implementation decisions down — the grilling context is settled, and optionally the PRD covers the same feature.
 
-**What it does:** reads the grilling session's settled decisions as the primary source; if `docs/prd.md` covers the **same feature context**, it supplements with user stories, requirements, and out-of-scope lines. If the PRD is for a different feature, it is ignored for this spec — the spec stands on the session alone, and `ss-prd` should be run first to bring it in sync. Writes `docs/spec/<feature-slug>.md`: problem, solution, user stories, implementation decisions, testing decisions (seams), out of scope, further notes.
+**What it does:** reads the grilling session's settled decisions as the primary source; if `docs/prd.md` covers the **same feature context**, it supplements with user stories, requirements, and out-of-scope lines. If the PRD is for a different feature, it is ignored for this spec — the spec stands on the session alone, and `ss-prd` should be run first to bring it in sync. Writes `docs/spec/<feature-slug>.md`, using the template in `ss-spec/SPEC-FORMAT.md` exactly.
 
 **Leaves behind:** `docs/spec/<feature-slug>.md`; the slug names the ticket folder in the next stage.
 
@@ -66,7 +66,7 @@ ss-grilling  →  ss-prd  →  ss-spec  →  ss-ticket  →  ss-implement  →  
 
 **When:** the spec is written and the work is too big for one context window, or you want tracer-bullet slices with declared blocking edges.
 
-**What it does:** breaks the spec into vertical-slice tickets under `docs/plan/tickets/<feature-slug>/`, numbered in dependency order. Wide refactors are sequenced expand → migrate → contract, never forced into one slice.
+**What it does:** breaks the spec into vertical-slice tickets under `docs/plan/tickets/<feature-slug>/`, numbered in dependency order, each using the template in `ss-ticket/TICKET-FORMAT.md` exactly. Wide refactors are sequenced expand → migrate → contract, never forced into one slice.
 
 **Leaves behind:** one file per ticket, each with a `Status: ready` line and a "Blocked by" list. In the quiz step the user names the tickets a person works. Those are **Human tickets**, written with `Status: ready-for-human`. A Human ticket is workable once all its blockers are `done`; nothing rewrites its status. The person sets `done` by hand.
 

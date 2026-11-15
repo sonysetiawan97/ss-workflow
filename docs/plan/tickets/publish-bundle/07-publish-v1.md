@@ -1,9 +1,9 @@
 # 07 — Publish v1.0.0
 
 - **Date:** 2026-11-15
+- **Source:** docs/spec/publish-bundle.md; docs/prd.md
 - **Status:** ready-for-human
 - **Blocked by:** 02 — Workers that run from any install location; 03 — Public-clean text; 04 — Release files; 05 — Human tickets; 06 — Format files for PRD, spec and ticket
-- **Source:** docs/spec/publish-bundle.md; docs/prd.md
 
 ## What to build
 

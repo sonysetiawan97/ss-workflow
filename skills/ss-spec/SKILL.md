@@ -21,47 +21,7 @@ When gathering codebase context for the spec and `graphify-out/graph.json` exist
 
 3. Sketch the **seams** at which the work will be tested. Existing seams are preferred over new ones. Use the highest seam possible; if new seams are needed, propose them at the highest point you can. The ideal number of seams is one. Show the user these seams and confirm they match expectations before writing.
 
-4. Write the spec to `/docs/spec/<feature-slug>.md` using the template below. Create `docs/spec/` if missing.
-
-<spec-template>
-
-# Spec: <name>
-
-Source: the settled grilling decisions, plus `/docs/prd.md` when it covers the same feature. This spec is a decision record for a fresh session: it assumes no shared context.
-
-## Problem Statement
-
-The problem, from the user's perspective.
-
-## Solution
-
-The solution, from the user's perspective.
-
-## User Stories
-
-A LONG, numbered list covering every aspect of the work. Each in the form:
-
-1. As an <actor>, I want a <feature>, so that <benefit>
-
-## Implementation Decisions
-
-A list of the decisions already made: modules built or modified, their interfaces, architectural choices, schema changes, API contracts, specific interactions. No specific file paths or code snippets — they go stale fast. Exception: if a prototype produced a snippet that encodes a decision more precisely than prose (state machine, reducer, schema, type shape), inline it and note it came from the prototype; keep only the decision-rich parts.
-
-## Testing Decisions
-
-- What makes a good test here (external behavior, not implementation details).
-- Which modules are tested, and the seams from step 3.
-- Prior art: similar existing tests to follow.
-
-## Out of Scope
-
-What was deliberately refused or deferred. These are usually the most useful lines on the page.
-
-## Further Notes
-
-Anything else a fresh session needs to pick up the work.
-
-</spec-template>
+4. Write the spec to `/docs/spec/<feature-slug>.md` using the template in [SPEC-FORMAT.md](./SPEC-FORMAT.md) exactly: the same headings in the same order, nothing added or renamed, and "None decided." for an empty section. Create `docs/spec/` if missing.
 
 5. Show the user the written spec and wait for confirmation. Do not start implementing until the user says the spec is right.
 

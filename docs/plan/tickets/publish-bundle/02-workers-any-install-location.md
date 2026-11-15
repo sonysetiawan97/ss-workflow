@@ -1,10 +1,10 @@
 # 02 — Workers that run from any install location
 
 - **Date:** 2026-11-15
-- **Status:** done · unverified: AC4 end-to-end `/ss-pm` run on Claude Code with the Bundle installed (needs a main session and an install; not runnable from a Worker) · suggestion: [clean:names] skills/ss-pm/SKILL.md:39 — "because the fresh context does not know it" has an unclear referent for "it"; name it ("does not know this Skill's base directory")
-- **Selesai:** 2026-11-15 · /Volumes/workspace/ss/skills/ss-workflow@uncommitted
-- **Blocked by:** 01 — Import the Bundle with Published names
 - **Source:** docs/spec/publish-bundle.md; docs/adr/0001-workers-without-agent-files.md
+- **Status:** done · unverified: AC4 end-to-end `/ss-pm` run on Claude Code with the Bundle installed (needs a main session and an install; not runnable from a Worker) · suggestion: [clean:names] skills/ss-pm/SKILL.md:39 — "because the fresh context does not know it" has an unclear referent for "it"; name it ("does not know this Skill's base directory")
+- **Blocked by:** 01 — Import the Bundle with Published names
+- **Done:** 2026-11-15 · /Volumes/workspace/ss/skills/ss-workflow@uncommitted
 
 ## What to build
 

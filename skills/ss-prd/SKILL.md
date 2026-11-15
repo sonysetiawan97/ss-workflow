@@ -12,45 +12,9 @@ Create or update `/docs/prd.md` from the current conversation context. No interv
 2. **Gather decisions from context.** The settled decisions live in:
    - `GLOSSARY.md` (term vocabulary) and `docs/adr/` (recorded trade-offs) — written during the grilling session
    - The current conversation itself
-   Read all of them. Do **not** re-interview. If a section below has no settled decision behind it, leave it short and say so — do not invent.
+   Read all of them. Do **not** re-interview. If a section has no settled decision behind it, write "None decided." — do not invent.
 
-3. **Write or update `/docs/prd.md`.** Use the template below. When the PRD already exists, update the sections in place; don't rewrite unchanged sections. Every settled decision gets a home in exactly one section; don't restate the same decision in two places.
-
-<prd-template>
-
-# PRD: <feature name>
-
-## Problem
-
-The problem the user faces, from the user's perspective.
-
-## Goals / Non-Goals
-
-What this feature does, and what it deliberately does not do.
-
-## Users / Actors
-
-Who uses it and in what role.
-
-## Requirements
-
-Numbered. Each checkable: a reviewer can tell done from not-done.
-
-## Acceptance Criteria
-
-Numbered, testable. Each independently verifiable — a test or a manual check that can be run without reading code.
-
-## Constraints / Assumptions
-
-What was fixed by the interview or by the environment, not discovered during implementation.
-
-## Changelog
-
-<!-- newest first -->
-
-- **YYYY-MM-DD** — <one line: what changed and why>. <new feature context / new decision / requirement N revised>
-
-</prd-template>
+3. **Write or update `/docs/prd.md`.** Use the template in [PRD-FORMAT.md](./PRD-FORMAT.md) exactly: the same headings in the same order, nothing added or renamed, and "None decided." for an empty section. When the PRD already exists, update the sections in place; don't rewrite unchanged sections. Every settled decision gets a home in exactly one section; don't restate the same decision in two places.
 
 4. **Changelog discipline.** Every PRD write appends one line to `## Changelog` at the top of that section: date, what changed, why. A new feature context layered on top of an existing PRD (e.g. grilling for feature B while the PRD covers feature A) updates the relevant sections AND appends a changelog line naming the new context.
 

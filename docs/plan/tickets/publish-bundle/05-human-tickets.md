@@ -1,11 +1,10 @@
 # 05 — Human tickets
 
 - **Date:** 2026-11-15
-- **Status:** done · unverified: AC5 scratch-repo `/ss-pm` run (needs a main session that can dispatch Workers and commit; not runnable from a Worker). Rule text checked by reading: `ss-pm` eligibility excludes `ready-for-human`, report adds the Human ticket line
-- **Review suggestion:** [clean:duplication] skills/ss-pm/SKILL.md:13 — "explicit ticket files → work every one named" reads against line 18 (Human ticket never dispatched, even when named explicitly); point the explicit-files line at the exception.
-- **Selesai:** 2026-11-15 · /Volumes/workspace/ss/skills/ss-workflow@uncommitted
-- **Blocked by:** 01 — Import the Bundle with Published names; 03 — Public-clean text
 - **Source:** docs/spec/publish-bundle.md; docs/prd.md
+- **Status:** done · unverified: AC5 scratch-repo `/ss-pm` run (needs a main session that can dispatch Workers and commit; not runnable from a Worker). Rule text checked by reading: `ss-pm` eligibility excludes `ready-for-human`, report adds the Human ticket line · suggestion: [clean:duplication] skills/ss-pm/SKILL.md:13 — "explicit ticket files → work every one named" reads against line 18 (Human ticket never dispatched, even when named explicitly); point the explicit-files line at the exception.
+- **Blocked by:** 01 — Import the Bundle with Published names; 03 — Public-clean text
+- **Done:** 2026-11-15 · /Volumes/workspace/ss/skills/ss-workflow@uncommitted
 
 ## What to build
 
