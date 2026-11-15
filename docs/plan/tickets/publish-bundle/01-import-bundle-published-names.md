@@ -1,9 +1,10 @@
 # 01 — Import the Bundle with Published names
 
 - **Date:** 2026-11-15
-- **Status:** ready
+- **Status:** done · unverified: actual `npx skills add ./ -g` not run (global side effect); `npx skills add ./ --list` found 18 Skills with Published names
 - **Blocked by:** None — can start immediately
 - **Source:** docs/spec/publish-bundle.md
+- **Selesai:** 2026-11-15 · ss-workflow@uncommitted
 
 ## What to build
 
