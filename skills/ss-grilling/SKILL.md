@@ -35,7 +35,7 @@ Every session leaves a paper trail. As decisions settle, write them to the repo 
 
 2. **Update `GLOSSARY.md` inline, immediately.** When a term is resolved or a fuzzy word is sharpened, write it to `GLOSSARY.md` right there — don't batch. Use the [GLOSSARY-FORMAT.md](../ss-domain-modeling/GLOSSARY-FORMAT.md) format. `GLOSSARY.md` is a pure glossary: term → one or two sentence definition + `_Avoid_` list. No implementation details, no decisions, no scratch notes.
 
-3. **Offer ADRs sparingly.** When a decision meets all three of: (a) hard to reverse, (b) surprising without context to a future reader, (c) result of a real trade-off — offer to record it as `docs/adr/NNNN-slug.md` (next sequential number). Use the [ADR-FORMAT.md](../ss-domain-modeling/ADR-FORMAT.md) format: 1–3 sentences of context, decision, and why; optional sections only when they add value.
+3. **Offer ADRs sparingly.** When a decision meets all three of: (a) hard to reverse, (b) surprising without context to a future reader, (c) result of a real trade-off — offer to record it as `docs/adr/NNNN-slug.md` (next sequential number). Use the template in [ADR-FORMAT.md](../ss-domain-modeling/ADR-FORMAT.md) exactly: 1–3 sentences of context, decision, and why under `Decision`, and "None decided." for an empty section.
 
 4. **Challenge as you go.** If the user uses a term that conflicts with `GLOSSARY.md`, call it out immediately ("your glossary defines 'cancellation' as X, but you seem to mean Y — which is it?"). If the user states how something works and the code disagrees, surface it ("the code cancels entire Orders, but you just said partial cancellation is possible — which is right?"). Stress-test domain relationships with concrete edge-case scenarios.
 

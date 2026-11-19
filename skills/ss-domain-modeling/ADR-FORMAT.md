@@ -7,20 +7,33 @@ Create the `docs/adr/` directory lazily: only when the first ADR is needed.
 ## Template
 
 ```md
-# {Short title of the decision}
+# <Short title of the decision>
 
-{1-3 sentences: what's the context, what did we decide, and why.}
+- **Date:** YYYY-MM-DD
+- **Source:** <grilling session date, triage request path, or conversation date>
+- **Status:** accepted | deprecated | superseded by ADR-NNNN
+
+## Decision
+
+1-3 sentences: what's the context, what did we decide, and why.
+
+## Considered Options
+
+The rejected alternatives worth remembering, each with why it lost.
+
+## Consequences
+
+Non-obvious downstream effects a future reader needs called out.
 ```
 
-That's it. An ADR can be a single paragraph. The value is in recording *that* a decision was made and *why*, not in filling out sections.
+## Rules
 
-## Optional sections
-
-Only include these when they add genuine value. Most ADRs won't need them.
-
-- **Status** frontmatter (`proposed | accepted | deprecated | superseded by ADR-NNNN`): useful when decisions are revisited
-- **Considered Options**: only when the rejected alternatives are worth remembering
-- **Consequences**: only when non-obvious downstream effects need to be called out
+- Use the template exactly: the same headings in the same order, nothing added or renamed.
+- A section with no settled decision behind it holds only "None decided."
+- `Date` is the date of the latest write. `Source` names what the decision came from.
+- Inside a section, use lists, tables, bold lead-ins and code blocks, never extra headings.
+- Keep it short. The value is in recording *that* a decision was made and *why*, not in filling out sections.
+- Superseding: the new ADR names the old one in `Decision`; the old ADR's `Status` becomes `superseded by ADR-NNNN`.
 
 ## Numbering
 
