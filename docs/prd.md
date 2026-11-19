@@ -1,6 +1,6 @@
 # PRD: Publish the ss workflow Bundle
 
-- **Date:** 2026-11-15
+- **Date:** 2026-11-19
 - **Source:** the grilling session of 2026-11-15, `GLOSSARY.md`, `docs/adr/0001-workers-without-agent-files.md`
 
 ## Problem
@@ -73,9 +73,15 @@ The ss workflow skills exist only on one machine, as local `ss-*-001` folders un
 - **Unverified**: requirement 6 assumes the Host tells `ss-pm` its own base directory. Claude Code does ("Base directory for this skill"); pi and opencode are not checked.
 - The repo is personal (`ss`) and kept separate from office work.
 
+## Companion Docs
+
+None: this repo is a skills Bundle with no tables, endpoints or page routes.
+
 ## Changelog
 
 <!-- newest first -->
+
+- **2026-11-19**: Added the `Companion Docs` section that `ss-prd/PRD-FORMAT.md` now requires; none chosen, since the Bundle has no schemas, API or routes. No decision changed.
 
 - **2026-11-15**: Rewritten to `ss-prd/PRD-FORMAT.md`: the `Date` and `Source` header block is new. No decision changed.
 

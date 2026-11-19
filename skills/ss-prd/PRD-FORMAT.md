@@ -24,7 +24,7 @@ Who uses it and in what role.
 
 ## Requirements
 
-Numbered. Each checkable: a reviewer can tell done from not-done.
+Numbered. Each checkable: a reviewer can tell done from not-done. A requirement about data, endpoints or pages states the rule and links the companion section for the shape (`see [schemas.md#<table>](schemas.md#<table>)`).
 
 ## Acceptance Criteria
 
@@ -34,11 +34,17 @@ Numbered, testable. Each independently verifiable — a test or a manual check t
 
 What was fixed by the interview or by the environment, not discovered during implementation.
 
+## Companion Docs
+
+- [Schemas](schemas.md) — tables, columns, keys
+- [API list](api-list.md) — endpoints
+- [Page routes](page-routes.md) — routes and pages
+
 ## Changelog
 
 <!-- newest first -->
 
-- **YYYY-MM-DD** — <one line: what changed and why>. <new feature context / new decision / requirement N revised>
+- **YYYY-MM-DD** — <one line: what changed and why>. <new feature context / new decision / requirement N revised / schemas.md: table X added>
 ```
 
 ## Rules
@@ -47,3 +53,4 @@ What was fixed by the interview or by the environment, not discovered during imp
 - A section with no settled decision behind it holds only "None decided."
 - `Date` is the date of the latest write. `Source` names what the decisions came from.
 - Inside a section, use lists, tables, bold lead-ins and code blocks, never extra headings.
+- `Companion Docs` lists only the companions chosen for this repo's kind. When none is chosen, it holds only "None: <reason from the environment>."

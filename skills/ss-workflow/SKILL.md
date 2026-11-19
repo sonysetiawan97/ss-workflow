@@ -9,7 +9,7 @@ A static flow document. It does not run anything — it tells you which skill to
 
 ## Precondition
 
-None. No issue tracker and no per-repo setup: every ss skill reads and writes fixed paths in the repo (`GLOSSARY.md`, `docs/adr/`, `docs/prd.md`, `docs/spec/`, `docs/plan/`).
+None. No issue tracker and no per-repo setup: every ss skill reads and writes fixed paths in the repo (`GLOSSARY.md`, `docs/adr/`, `docs/prd.md` and its companions `docs/schemas.md`, `docs/api-list.md`, `docs/page-routes.md`, `docs/spec/`, `docs/plan/`).
 
 ## The main flow: idea → ship
 
@@ -23,7 +23,7 @@ ss-grilling  →  ss-prd  →  ss-spec  →  ss-ticket  →  ss-implement  →  
 | # | Skill | When | Leaves behind |
 |---|---|---|---|
 | 1 | `ss-grilling` | idea not yet settled | shared understanding, `GLOSSARY.md`, `docs/adr/` |
-| 2 | `ss-prd` | decisions settled | `docs/prd.md` + changelog line |
+| 2 | `ss-prd` | decisions settled | `docs/prd.md` + companions by repo kind + changelog line |
 | 3 | `ss-spec` | ready to write seams and implementation decisions | `docs/spec/<feature-slug>.md` |
 | 4 | `ss-ticket` | spec too big for one session | `docs/plan/tickets/<feature-slug>/NN-*.md`, status `ready` |
 | 5 | `ss-implement` | a `ready` ticket or `ready-for-agent` request | uncommitted tree, unit `done`, review report |
@@ -46,17 +46,17 @@ ss-grilling  →  ss-prd  →  ss-spec  →  ss-ticket  →  ss-implement  →  
 
 **When:** the grilling session just settled the decisions and you need a durable, dated record of them in the repo.
 
-**What it does:** synthesizes the grilling session's settled decisions into `docs/prd.md`, using the template in `ss-prd/PRD-FORMAT.md` exactly, and appends one line to `## Changelog` naming what changed and why. Updates in place when the PRD already covers the same feature.
+**What it does:** synthesizes the grilling session's settled decisions into `docs/prd.md`, using the template in `ss-prd/PRD-FORMAT.md` exactly. Picks companion docs by repo kind — `docs/schemas.md` and `docs/api-list.md` for a backend, `docs/page-routes.md` for a frontend, all three for full-stack — each from its own Format file; the PRD holds the rule, the companion holds the shape. Appends one line to `## Changelog` naming what changed and why. Updates in place when the PRD already covers the same feature.
 
-**Leaves behind:** `docs/prd.md` (current, with changelog history).
+**Leaves behind:** `docs/prd.md` (current, with changelog history) and its chosen companions.
 
-**Done when:** the user confirms the PRD matches the shared understanding; the changelog line is written.
+**Done when:** the user confirms the PRD and its companions match the shared understanding; the changelog line is written.
 
 ### 3. `ss-spec`
 
 **When:** you're ready to write the test-seams and implementation decisions down — the grilling context is settled, and optionally the PRD covers the same feature.
 
-**What it does:** reads the grilling session's settled decisions as the primary source; if `docs/prd.md` covers the **same feature context**, it supplements with user stories, requirements, and out-of-scope lines. If the PRD is for a different feature, it is ignored for this spec — the spec stands on the session alone, and `ss-prd` should be run first to bring it in sync. Writes `docs/spec/<feature-slug>.md`, using the template in `ss-spec/SPEC-FORMAT.md` exactly.
+**What it does:** reads the grilling session's settled decisions as the primary source; if `docs/prd.md` covers the **same feature context**, it and its linked companions supplement with user stories, requirements, and out-of-scope lines. If the PRD is for a different feature, it is ignored for this spec — the spec stands on the session alone, and `ss-prd` should be run first to bring it in sync. Writes `docs/spec/<feature-slug>.md`, using the template in `ss-spec/SPEC-FORMAT.md` exactly.
 
 **Leaves behind:** `docs/spec/<feature-slug>.md`; the slug names the ticket folder in the next stage.
 

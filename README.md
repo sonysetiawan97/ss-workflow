@@ -18,7 +18,7 @@ ss-grilling  →  ss-prd  →  ss-spec  →  ss-ticket  →  ss-implement  →  
 - `ss-implementator`: worker that implements one ticket for `ss-pm`.
 - `ss-improve-codebase-architecture`: scan for deepening opportunities and grill the one you pick.
 - `ss-pm`: implement, review and commit many ready tickets in one run.
-- `ss-prd`: create or update `docs/prd.md` from settled decisions.
+- `ss-prd`: create or update `docs/prd.md` and its companion docs (schemas, API list, page routes) from settled decisions.
 - `ss-review-commit`: worker that reviews one ticket for `ss-pm` and commits it when clean.
 - `ss-spec`: turn settled decisions into `docs/spec/<feature-slug>.md`.
 - `ss-tdd`: test-driven development, red-green-refactor.
